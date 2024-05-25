@@ -1,22 +1,47 @@
+function capitalizeFirstLetter(str) {
+    const words = str.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
+    }
+    return words.join(" ");
+}
 
-function getProduct() {
-    
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+
+function changePriceFormat(price) {
+    price = price.toString();
+    price = reverse(price);
+    price = price.match(/.{1,3}/g);
+    return reverse(price.join("."))
+}
+
+async function getProduct() {
+    console.log("Test");
+    const response = await fetch("https://dummyapi-0uzr.onrender.com/products");
+    const content = await response.json();
+    console.log(content);
+    return content;
 }
 
 function generateProduct(product) {
-    // Change tag to capitalize only the first letter 
     if (product.tag) {
-        product.tag = product.tag.toLowerCase();
-        product.tag = product.tag.charAt(0).toUpperCase() + product.tag.substr(1);
+        product.tag = capitalizeFirstLetter(product.tag)
     }
-    const markup = `<div class="product-container" id="${product.id}">
-    <img class="product-image" src="${product.src}" alt="${product.name}">
-    <p class="sale">${product.sale ? `-${product.sale}%` : ""}</p>
+    if (product.image) {
+        product.image = "data:image/png;base64," + product.image;
+    }
+    product.price = changePriceFormat(product.price);
+    product.unit_price = capitalizeFirstLetter(product.unit_price);
+    const markup = `<div class="product-container" id="${product.name}">
+    <img class="product-image" src="${product.image}" alt="${product.name}">
+    <p class="discount">${product.discount ? `-${product.discount}%` : ""}</p>
     <p class="tag">${product.tag ? product.tag : ""}</p>
     
     <h3 class="product-name">${product.name}</h3>
-    <p class="product-description">${product.desc}</p>
-    <h4 class="product-price">${product.price}</h4>
+    <p class="product-description">${product.short_desc}</p>
+    <h4 class="product-price">${product.unit_price} ${product.price}</h4>
     <p class="product-old-price"><del>${product.old_price ? product.old_price : ""}</del></p>
     <div class="product-hover-utility">
         <button class="product-add-to-cart">Add to cart</button>
@@ -30,9 +55,31 @@ function generateProduct(product) {
     sec_3.insertAdjacentHTML("beforeend",markup)  
 }
 
+// product: 
+//     - discount (int)
+//     - image (base64)
+//     - name (string)
+//     - price (int)
+//     - short_desc (string)
+//     - tag (string)
+//     - unit_price(rp)
+
+async function generateAllProduct() {
+    const content = await getProduct();
+    for (id in content) {
+        generateProduct(content[id]);
+    }
+}
+
 function genProductTest() {
-    product = {id : "sylthe", name : "Sylthe", sale : "0", desc : "ABC", price : "1.000.000", old_price : "1.500.000", sale: 30, tag : "new", src : "../image/Home/image 1.png"};
+    product = {discount : 30, name : "Syltherine", price : 2500000, short_desc : "Stylish cafe chair", tag : "", unit_price : "rp"}
     generateProduct(product);
 }
 
-genProductTest()
+function main() {
+    genProductTest();
+    // getProduct();
+    // generateAllProduct();
+}
+
+main();
