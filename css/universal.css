@@ -66,8 +66,7 @@ header {
   padding: 1rem 3rem;
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: max(15vh, 5.5rem);
+  width: 100svw;
   background-color: white;
   z-index: 100;
 }
