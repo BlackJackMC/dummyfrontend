@@ -127,18 +127,20 @@
 }
 
 .row {
-  --section3Gap: min(5vh, 25px);
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  --ProductionGap: clamp(10px, 5vh, 25px);
+
+  display: grid;
+  width: auto;
+  margin-bottom: var(--ProductionGap);
+  gap: var(--ProductionGap);
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 }
+
 
 .production-container {
   position: relative;
-  display: inline-block;
-  width: 14rem;
-  margin-bottom: var(--section3Gap);
+  width: clamp(14rem, 100%, 18rem);
   background-color: #f4f5f7;
 }
 
@@ -154,7 +156,6 @@
   margin: 0;
   height: 100%;
   width: 100%;
-  border-style: solid;
   background-color: rgba(52, 53, 53, 70%);
 }
 
@@ -245,7 +246,7 @@
 
 .production-sale {
   position: absolute;
-  display: none;
+  display: flex;
   margin: 0;
   top: 5%;
   left: 73%;
@@ -260,12 +261,10 @@
 }
 
 #discount {
-  display: flex;
   background-color: #e97171;
 }
 
 #new {
-  display: flex;
   background-color: #2ec1ac;
 }
 
