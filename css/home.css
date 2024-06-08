@@ -3,8 +3,6 @@
   height: max(100svh, 30rem);
   margin-top: 15vh;
   padding-inline: 1rem;
-  width: 100%;
-  padding-inline: 1rem;
   background-image: url("../image/Background/scandinavian-interior-mockup-wall-decal-background 1.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: right;
-  margin: 0;
 }
 
 #hero-inform-box {
@@ -26,12 +23,12 @@
 #hero-box-heading-2 {
   font-weight: var(--fw-semibold);
   text-transform: capitalize;
-  text-transform: capitalize;
   color: var(--tx-primary);
+  font-size: 0.9rem;
   letter-spacing: 2px;
   margin: 0;
-  margin: 0;
 }
+
 
 #hero-box-heading-1 {
   font-weight: var(--fw-bold);
@@ -57,11 +54,8 @@
 }
 
 #hero-buy-now-button:hover {
-#hero-buy-now-button:hover {
   background-color: #c0a25d;
 }
-
-#hero-buy-now-button:active {
 
 #hero-buy-now-button:active {
   background-color: #8e6c1d;
@@ -71,12 +65,7 @@
   --section2Width: 90vw;
   --section2ColGap: min(1vw, 20px);
 
-#production-range {
-  --section2Width: 90vw;
-  --section2ColGap: min(1vw, 20px);
-
   position: relative;
-  margin: 0;
   margin: 0;
   margin-top: 10vh;
   width: var(--section2Width);
@@ -89,8 +78,6 @@
 
 #production-range-heading,
 #production-range-description {
-#production-range-heading,
-#production-range-description {
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
@@ -98,7 +85,6 @@
   grid-column: 1/4;
 }
 
-#production-range-heading {
 #production-range-heading {
   font-weight: bold;
   font-size: clamp(1rem, 4vw, 1.5rem);
@@ -113,12 +99,10 @@
 }
 
 .production-range-image {
-.production-range-image {
   width: calc(var(--section2Width) / 3 - var(--section2ColGap) * 2);
   border-radius: 3%;
 }
 
-.production-range-room-name {
 .production-range-room-name {
   margin-top: 5vh;
   padding: 0;
@@ -128,7 +112,6 @@
 }
 
 #production {
-#production {
   position: relative;
   width: 94vw;
   margin-top: 5vh;
@@ -136,7 +119,6 @@
   margin-inline: 3vw;
 }
 
-#production-heading {
 #production-heading {
   display: block;
   font-weight: bold;
@@ -156,7 +138,6 @@
 }
 
 
-
 .production-container {
   position: relative;
   width: clamp(14rem, 100%, 18rem);
@@ -169,7 +150,6 @@
 }
 
 .hidden-info {
-.hidden-info {
   display: none;
   z-index: 99;
   position: absolute;
@@ -179,9 +159,16 @@
   background-color: rgba(52, 53, 53, 70%);
 }
 
-.action-share,
-.action-compare,
-.action-like {
+.material-symbols-outlined 
+{
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: 1.2rem;
+  color: white;
+}
 
 .action-share,
 .action-compare,
@@ -199,14 +186,8 @@
 .action-share:hover,
 .action-compare:hover,
 .action-like:hover {
-
-.action-share:hover,
-.action-compare:hover,
-.action-like:hover {
   font-weight: bold;
 }
-
-.hidden-icon {
 
 .hidden-icon {
   padding: 0;
@@ -216,7 +197,6 @@
   filter: invert(100%);
 }
 
-#add-to-cart-button {
 #add-to-cart-button {
   font-weight: 600;
   font-size: 1rem;
@@ -229,7 +209,7 @@
   cursor: pointer;
 }
 
-#add-to-cart-button:active  {
+#add-to-cart-button:active {
   color: white;
   background-color: #B88E2F;
 }
