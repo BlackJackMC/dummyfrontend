@@ -186,21 +186,7 @@
 .action-share:hover,
 .action-compare:hover,
 .action-like:hover {
-
-.action-share:hover,
-.action-compare:hover,
-.action-like:hover {
   font-weight: bold;
-}
-
-.hidden-icon {
-
-.hidden-icon {
-  padding: 0;
-  margin: 0;
-  width: 15px;
-  height: 15px;
-  filter: invert(100%);
 }
 
 #add-to-cart-button {
