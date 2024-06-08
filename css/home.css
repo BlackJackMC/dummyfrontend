@@ -186,10 +186,6 @@
 .action-share:hover,
 .action-compare:hover,
 .action-like:hover {
-
-.action-share:hover,
-.action-compare:hover,
-.action-like:hover {
   font-weight: bold;
 }
 
