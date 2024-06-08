@@ -1,5 +1,7 @@
 #hero {
   width: 100%;
+  height: max(100svh, 30rem);
+  margin-top: 15vh;
   padding-inline: 1rem;
   background-image: url("../image/Background/scandinavian-interior-mockup-wall-decal-background 1.png");
   background-size: cover;
@@ -8,12 +10,12 @@
   display: flex;
   align-items: center;
   justify-content: right;
-  margin: 0;
 }
 
 #hero-inform-box {
-  width: 50%;
-  margin: 0;
+  width: max(50%, 20rem);
+  height: max(80%, calc(30rem*80%));
+  margin-right: 1.8vw;
   padding: 2rem 2rem;
   background-color: var(--bg-secondary);
 }
@@ -22,25 +24,28 @@
   font-weight: var(--fw-semibold);
   text-transform: capitalize;
   color: var(--tx-primary);
+  font-size: 0.9rem;
   letter-spacing: 2px;
   margin: 0;
 }
 
+
 #hero-box-heading-1 {
   font-weight: var(--fw-bold);
   color: var(--tx-secondary);
-  line-height: 1.5em;
-  font-size: 4em;
+  font-size: clamp(2rem, 4.72vw, 3.5rem);
   margin: 0;
 }
 
 #hero-box-description {
   color: var(--tx-primary);
   margin-block-end: 2rem;
+  margin-bottom: 5%;
+  font-size: clamp(0.8rem, 3vw, 0.95rem)
 }
 
 #hero-buy-now-button {
-  width: 13rem;
+  width: min(90%, 13rem);
   height: 4rem;
   cursor: pointer;
   color: var(--tx-tertiary);
@@ -82,13 +87,13 @@
 
 #production-range-heading {
   font-weight: bold;
-  font-size: min(1.5rem, 4vw);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   color: #333333;
   grid-row: 1;
 }
 
 #production-range-description {
-  font-size: min(0.9rem, 2vw);
+  font-size: clamp(0.5rem, 2vw, 0.9rem);
   color: #666666;
   grid-row: 2;
 }
@@ -101,7 +106,7 @@
 .production-range-room-name {
   margin-top: 5vh;
   padding: 0;
-  font-size: min(1.1rem, 2.5vw);
+  font-size: clamp(0.6rem, 2.5vw, 1.1rem);
   display: flex;
   justify-content: center;
 }
@@ -122,23 +127,25 @@
 }
 
 .row {
-  --section3Gap: min(5vh, 25px);
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  --ProductionGap: clamp(10px, 5vh, 25px);
+
+  display: grid;
+  width: auto;
+  margin-bottom: var(--ProductionGap);
+  gap: var(--ProductionGap);
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 }
 
-.product-container {
+
+.production-container {
   position: relative;
-  display: inline-block;
-  width: 14rem;
-  margin-bottom: var(--section3Gap);
+  width: clamp(14rem, 100%, 18rem);
   background-color: #f4f5f7;
 }
 
 
-.product-container * {
+.production-container * {
   margin: 0 0 0 5%;
 }
 
@@ -149,8 +156,18 @@
   margin: 0;
   height: 100%;
   width: 100%;
-  border-style: solid;
   background-color: rgba(52, 53, 53, 70%);
+}
+
+.material-symbols-outlined 
+{
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .action-share,
@@ -172,14 +189,6 @@
   font-weight: bold;
 }
 
-.hidden-icon {
-  padding: 0;
-  margin: 0;
-  width: 15px;
-  height: 15px;
-  filter: invert(100%);
-}
-
 #add-to-cart-button {
   font-weight: 600;
   font-size: 1rem;
@@ -197,40 +206,40 @@
   background-color: #B88E2F;
 }
 
-.product-container:hover {
+.production-container:hover {
   .hidden-info {
     display: block;
   }
 }
 
-.product-image {
+.production-image {
   margin: 0;
   height: 66%;
   width: 100%;
 }
 
-.product-name {
+.production-name {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.product-description {
+.production-description {
   font-size: 0.9rem;
   font-weight: 500;
   color: #898989
 }
 
-.product-price,
-.product-old-price {
+.production-price,
+.production-old-price {
   display: inline;
 }
 
-.product-price {
+.production-price {
   font-size: 1rem;
   font-weight: 600;
 }
 
-.product-old-price {
+.production-old-price {
   width: 1rem;
   margin-left: 0;
   font-size: 0.8rem;
@@ -238,7 +247,7 @@
   color: #B0B0B0
 }
 
-.sale {
+.production-sale {
   position: absolute;
   display: flex;
   margin: 0;
@@ -254,16 +263,16 @@
   justify-content: center;
 }
 
-.discount {
+#discount {
   background-color: #e97171;
 }
 
-.new {
+#new {
   background-color: #2ec1ac;
 }
 
-#show-more-button {
-  --buttonWidth: min(50%, 240px);
+#production-show-more {
+  --buttonWidth: clamp(170px, 50%, 240px);
   display: block;
   width: var(--buttonWidth);
   margin-left: calc(47vw - var(--buttonWidth)/2);
@@ -277,7 +286,7 @@
   cursor: pointer;
 }
 
-#show-more-button:active {
+#production-show-more:active {
   color: white;
   background-color: #B88E2F;
 }
