@@ -5,7 +5,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: auto;
   height: max(50dvh, 328px);
   background-image: url("/image/Background/Rectangle 1.png");
   background-size: cover;
@@ -53,7 +53,7 @@
 #contact-heading, #contact-description
 {
   display: flex;
-  width: 100vw;
+  width: auto;
   justify-content: center;
   text-align: center;
   margin-bottom: max(1vh, 5px);
