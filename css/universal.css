@@ -151,7 +151,7 @@ header {
 
 footer
 {
-  width: 100%;
+  width: 94vw;
   --footer-dist: clamp(15px, 7vh, 50px);
   display: grid;
   grid-template-columns: 3fr 6fr;
