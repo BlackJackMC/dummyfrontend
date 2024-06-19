@@ -17,34 +17,50 @@ function changePriceFormat(price) {
     return reverse(price.join("."))
 }
 
-function generateProduct(product,section_id) {
+function generateProduct(product,element) {
     if (product.tag) {
         product.tag = capitalizeFirstLetter(product.tag)
     }
     if (product.image) {
         product.image = "data:image/png;base64," + product.image;
     }
+    let old_price = null;
+    if (product.discount) {
+        old_price = product.price * 100 / product.discount;
+        old_price = Math.round(old_price / 1000) * 1000;
+        old_price = changePriceFormat(old_price);
+    }
     product.price = changePriceFormat(product.price);
     product.unit_price = capitalizeFirstLetter(product.unit_price);
-    const markup = `<div class="product-container" id="${product.name}">
-    <img class="product-image" src="${product.image}" alt="${product.name}">
-    <p class="discount">${product.discount ? `-${product.discount}%` : ""}</p>
-    <p class="tag">${product.tag ? product.tag : ""}</p>
-    
-    <h3 class="product-name">${product.name}</h3>
-    <p class="product-description">${product.short_desc}</p>
-    <h4 class="product-price">${product.unit_price} ${product.price}</h4>
-    <p class="product-old-price"><del>${product.old_price ? product.old_price : ""}</del></p>
-    <div class="product-hover-utility">
-        <button class="product-add-to-cart">Add to cart</button>
-        <a href=""><span class="material-symbols-outlined">share</span>Share</a>
-        <a href=""><span class="material-symbols-outlined">sync_alt</span>Compare</a>
-        <a href=""><span class="material-symbols-outlined">favorite</span>Like</a>
+    const markup = `<div class="production-container" id="${product.name}">
+    <div class="hidden-info">
+        <button class="add-to-cart-button">
+            Add to cart
+        </button>
+        <p class="action-share">
+            <span class="material-symbols-outlined icon-filled">share</span>
+            Share
+        </p>
+        <p class="action-compare">
+            <span class="material-symbols-outlined">swap_horiz</span>
+            Compare
+        </p>
+        <p class="action-compare">
+            <span class="material-symbols-outlined">favorite</span>
+            Like
+        </p>
     </div>
-</div>
-`;
-    const sec_3 = document.getElementById(section_id);
-    sec_3.insertAdjacentHTML("beforeend",markup)
+    <img class="production-image" src="${product.image}" alt="${product.name}">
+    ${product.discount != 0 ? `<span class="production-sale discount"><p>-${product.discount}%</p></span>` : ""}
+    ${product.tag.toLowerCase() == "new" ? `<span class="production-sale new"><p>New</p></span>` : ""}
+
+    <h3 class="production-name">${product.name}</h3>
+    <p class="production-description">${product.short_desc}</p>
+    <h4 class="production-price">${product.unit_price} ${product.price}</h4>
+    <p class="production-old-price"><del>${old_price == null ? "" : product.unit_price + " " + old_price}</del></p>
+</div>`
+
+    element.insertAdjacentHTML("beforeend",markup)
 }
 
 // product: 
@@ -55,7 +71,6 @@ function generateProduct(product,section_id) {
 //     - short_desc (string)
 //     - tag (string)
 //     - unit_price(string)
-
 
 
 async function getProduct() {
@@ -70,9 +85,13 @@ async function getProduct() {
 }
 
 async function generateAllProduct() {
+    let lastItem = window.location.href;
+    lastItem = lastItem.substring(lastItem.lastIndexOf('/') + 1)
     const content = await getProduct();
-    for (id in content) {
-        generateProduct(content[id]);
+    if (lastItem == "index.html") {
+        for (id in content) {
+            generateProduct(content[id],document.getElementById("production").getElementsByClassName("row")[0]);
+        }
     }
 }
 

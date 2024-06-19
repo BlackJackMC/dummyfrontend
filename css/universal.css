@@ -11,8 +11,10 @@
 
   --bg-primary: #FFF;
   --bg-secondary: #FFF3E3;
+  --bg-tertiary: #B88E2F;
   --tx-primary: #333333;
   --tx-secondary: #B88E2F;
+  --tx-tertiary: #FFF;
   --tx-light: #666666;
   --tx-highlight: #FFF;
   --bg-warning: #E97171;
@@ -43,12 +45,17 @@ a {
   color: inherit;
 }
 
-body {
-  margin: 0;
+button {
+  border: none;
+  outline: none;
 }
 
-.material-symbols-outlined {
-  font-size: 1.5rem;
+button:hover, a:hover {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
 }
 
 
@@ -59,8 +66,9 @@ header {
   padding: 1rem 3rem;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100dvw;
   background-color: white;
+  z-index: 100;
 }
 
 #page-logo {
@@ -69,7 +77,7 @@ header {
   user-select: none;
 }
 
-#branch-logo {
+#brand-logo {
   display: flex;
   align-items: center;
 }
@@ -115,6 +123,7 @@ header {
 
 #support-nav-list li {
   margin-inline-start: 1rem;
+  color: black;
 }
 
 
@@ -130,4 +139,81 @@ header {
 #page-nav-list li a:hover,
 #support-nav-list li a:hover {
   font-weight: var(--fw-bold);
+}
+
+.before-footer {
+  margin-top: 12vh;
+  margin-bottom: clamp(15px, 7vh, 50px);
+}
+
+.after-footer {
+  margin-top: clamp(15px, 7vh, 50px);
+  margin-bottom: clamp(15px, 7vh, 50px);
+  width: 94vw;
+}
+
+footer .container {
+  width: 90%;
+  margin: 0 auto;
+  --footer-dist: clamp(15px, 7vh, 50px);
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+}
+
+@media screen and (max-width: 850px) {
+  footer {
+    grid-template-columns: repeat(auto-fill, minmax(400px, max-content));
+  }
+}
+
+#footer-heading-1 {
+  margin: 0;
+}
+
+#footer-address {
+  width: min(100%, 350px);
+  margin-bottom: var(--footer-dist);
+  color: #9F9F9F;
+  margin-top: var(--footer-dist);
+}
+
+#footer-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
+  column-gap: min(2vw, 20px);
+}
+
+.footer-nav-heading {
+  color: #9F9F9F;
+  font-weight: var(--fw-semibold);
+}
+
+.footer-nav-list {
+  margin: 0;
+  font-weight: var(--fw-medium);
+}
+
+.footer-input,
+.footer-nav-list * {
+  margin-top: var(--footer-dist);
+}
+
+.footer-input,
+#footer-subscribe {
+  border-style: none;
+  border-bottom: 2px solid black;
+}
+
+.footer-input {
+  padding-right: 1.7vw;
+}
+
+#footer-subscribe {
+  background-color: white;
+  font-weight: var(--fw-semibold);
+  padding: 0;
+}
+
+#footer-copy-right {
+  margin-inline: 3vw;
 }

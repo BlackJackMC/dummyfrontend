@@ -5,122 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniro -  Contact</title>
     <link rel="icon" href="image/Meubel House_Logos-05.png">
+    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/universal.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
     <header>
-
-        <div id="main-logo">
-            <img id="brand-logo" src="image/Meubel House_Logos-05.png" alt="Furniro icon"> 
-            <h2 id="brand-name">Furniro</h2>
+        <div id="page-logo">
+            <img id="brand-logo" src="image/Meubel House_Logos-05.png" alt="Furniro icon">
+            <h1 id="brand-name">Furniro</h1>
         </div>
-        
-        <nav id="header-nav">
-            <div id="page-nav">
-                <ul id="page-nav-list">
-                    <li> <a href="home.html" id="home-link" class="top-page-link">Home</a> </li>
-                    <li> <a href="shop.html" id="shop-link" class="top-page-link">Shop</a> </li>
-                    <li> <a href="about.html"id="about-link" class="top-page-link">About</a> </li>
-                    <li> <a href="contact.html" id="contact-link" class="top-page-link">Contact</a> </li>
-                </ul>
-            </div>
-
-            <div id="support-nav">
-                <ul id="support-nav-list">
-                    <li> <img class="top-support-button" id="assist-icon" src="image/HeaderIcon/mdi_account-alert-outline.png" alt="Assistance icon"> </li>
-                    <li> <img class="top-support-button" id="search-icon" src="image/HeaderIcon/Vector.png" alt="Find icon"> </li>
-                    <li> <img class="top-support-button" id="favorite-icon" src="image/HeaderIcon/akar-icons_heart.png" alt="Favorite icon"> </li>
-                    <li> <img class="top-support-button" id="cart-icon" src="image/HeaderIcon/ant-design_shopping-cart-outlined.png" alt="Cart icon"> </li>
-                </ul>
-            </div>
+        <nav id="page-nav">
+            <ul id="page-nav-list">
+                <li> <a href="home.html" id="home-link" class="top-page-link">Home</a> </li>
+                <li> <a href="shop.html" id="shop-link" class="top-page-link">Shop</a> </li>
+                <li> <a href="about.html" id="about-link" class="top-page-link">About</a> </li>
+                <li> <a href="contact.html" id="contact-link" class="top-page-link">Contact</a></li>
+            </ul>
         </nav>
-
+        <nav id="support-nav">
+            <ul id="support-nav-list">
+                <li><a href=""><span class="material-symbols-outlined">person_alert</span></a></li>
+                <li><a href=""><span class="material-symbols-outlined">search</span></a></li>
+                <li><a href=""><span class="material-symbols-outlined">favorite</span></a></li>
+                <li><a href=""><span class="material-symbols-outlined">shopping_cart</span></a></li>
+            </ul>
+        </nav>
     </header>
+    
 
     <main>
-        <section id="section-1">
-            <img id="background" src="image/Background/Rectangle 1.png" alt="cozy background">
+        <section id="breadcrumb">
 
-            <div id="middle-container">
-                <img id="mid-logo" src="image/Meubel House_Logos-05.png" alt="Furniro icon"> 
-                <h id="mid-heading"2>CONTACT</h2>
-                <p id="mid-nav"><b>Home > </b> Contact</p>
+            <div id="breadcrumb-container">
+                <div id = "breadcrumb-logo-container">
+                    <img id="breadcrumb-logo" src="image/Meubel House_Logos-05.png" alt="Furniro icon"> 
+                </div>
+                <h2 id="breadcrumb-heading">CONTACT</h2>
+                <p id="breadcrumb-nav"><b>Home > </b>&nbsp; Contact</p>
             </div>
         </section>
 
-        <section id="section-2">
+        <section id="contact">
             
-            <h2 id="sec-2-heading">Get In Touch With Us</h2>
-            <p id="sec-2-description">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
+            <h2 id="contact-heading">Get In Touch With Us</h2>
+            <p id="contact-description">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
             
-            <aside id="contact-info-box">
-                <div class="contact-info">
-                    <img class="contact-info-icon" src="image/Contact/Vector.png" alt="map marker">
-                    <h3 class="contact-info-heading">Address</h3>
-                    <p class="contact-info-description">236 5th SE Avenue, New York NY10000, United States</p>
-                </div>
+            <div id="contact-and-form">
+                <aside id="contact-container">
+                    <div class="contact-info" id="address">
+                        <img class="contact-icon" src="image/Contact/Vector.png" alt="map marker">
+                        <h3 class="contact-heading">Address</h3>
+                        <div class="contact-description">
+                            <p>236 5th SE Avenue, New York NY10000, United States</p>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="contact-info" id="phone-num">
+                        <img class="contact-icon" src="image/Contact/bxs_phone.png" alt="phone">
+                        <h3 class="contact-heading">Phone</h3>
+                        <div class="contact-description">
+                            <p>Mobile: +(84) 546-6789</p>
+                            <p>Hotline: +(84) 456-6789</p>
+                        </div>
+                    </div>
+        
+                    <div class="contact-info" id="time-table">
+                        <img class="contact-icon" src="image/Contact/Vector (1).png" alt="clock">
+                        <h3 class="contact-heading">Working Time</h3>
+                        <div class="contact-description">
+                            <p>Monday-Friday: 9:00 - 22:00</p>
+                            <p>Saturday-Sunday: 9:00 - 21:00</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <form id = "form-to-fill" action="" method="get">
+
+                    <p for="name" class = "box-title" id = "name">Your name</p> <br>
+                    <input type="text" placeholder="Abc" class = "box-input" id="name-input"> <br>
     
-                <div class="contact-info">
-                    <img class="contact-info-icon" src="image/Contact/bxs_phone.png" alt="phone">
-                    <h3 class="contact-info-heading">Phone</h3>
-                    <p class="contact-info-description">Mobile: +(84) 546-6789</p>
-                    <p class="contact-info-description">Hotline: +(84) 456-6789</p>
-                </div>
+                    <p for="Email" class = "box-title" id="email">Email address</p> <br>
+                    <input type="text" placeholder="Abc@def.com" class = "box-input" id="email-input"> <br>
+                    
+                    <p for="Subject" class = "box-title" id = "subject">Subject</p> <br>
+                    <input type="text" placeholder="This is an optional" class = "box-input" id="subject-input"> <br>
     
-                <div class="contact-info">
-                    <img class="contact-info-icon" src="image/Contact/Vector (1).png" alt="clock">
-                    <h3 class="contact-info-heading">Working Time</h3>
-                    <p class="contact-info-description">Monday-Friday: 9:00 - 22:00</p>
-                    <p class="contact-info-description">Saturday-Sunday: 9:00 - 21:00</p>
-                </div>
-            </aside>
-
-            <form action="" method="get">
-
-                <label for="name">Your name</label> <br>
-                <input type="text" placeholder="Abc"> <br>
-
-                <label for="Email">Email address</label> <br>
-                <input type="text" placeholder="Abc@def.com"> <br>
+                    <p for="text" class = "box-title" id="message">Message</p> <br>
+                    <textarea name="" id="message-input" placeholder="Hi! i’d like to ask about" class = "box-input"></textarea> <br>
+    
+                    <button id="contact-submit">Submit</button>
+    
+                </form>
+            </div>
                 
-                <label for="Subject">Subject</label> <br>
-                <input type="text" placeholder="This is an optional"> <br>
-
-                <label for="text">Message</label> <br>
-                <textarea name="" id="" placeholder="Hi! i’d like to ask about"></textarea> <br>
-
-                <button id="submit-button">Submit</button>
-
-            </form>
             
         </section>
 
-        <section class="section-3">
-            <div class="sec-3-feature">
-                <img class="sec-3-logo" src="image/Contact/trophy 1.png" alt="trophy">
+        <section class="feature">
+            <div class="feature-container">
+                <img class="feature-logo" src="image/Contact/trophy 1.png" alt="trophy">
 
-                <h3 class="sec-3-heading">High Quality</h3>
-                <p class="sec-3-description">crafted from top materials</p>
+                <h3 class="feature-heading">High Quality</h3>
+                <p class="feature-description">crafted from top materials</p>
             </div>
 
-            <div class="sec-3-feature">
-                <img class="sec-3-logo" src="image/Contact/warranty.png" alt="warranty">
+            <div class="feature-container">
+                <img class="feature-logo" src="image/Contact/warranty.png" alt="warranty">
 
-                <h3 class="sec-3-heading">Warranty Protection</h3>
-                <p class="sec-3-description">Over 2 years</p>
+                <h3 class="feature-heading">Warranty Protection</h3>
+                <p class="feature-description">Over 2 years</p>
             </div>
 
-            <div class="sec-3-feature">
-                <img class="sec-3-logo" src="image/Contact/shipping.png" alt="shipping">
+            <div class="feature-container">
+                <img class="feature-logo" src="image/Contact/shipping.png" alt="shipping">
 
-                <h3 class="sec-3-heading">Free Shipping</h3>
-                <p class="sec-3-description">Order over 150 $</p>
+                <h3 class="feature-heading">Free Shipping</h3>
+                <p class="feature-description">Order over 150 $</p>
             </div>
 
-            <div class="sec-3-feature">
-                <img class="sec-3-logo" src="image/Contact/support.png" alt="support">
+            <div class="feature-container">
+                <img class="feature-logo" src="image/Contact/support.png" alt="support">
 
-                <h3 class="sec-3-heading">24 / 7 Support</h3>
-                <p class="sec-3-description">Dedicated support</p>
+                <h3 class="feature-heading">24 / 7 Support</h3>
+                <p class="feature-description">Dedicated support</p>
             </div>
         </section>
 
@@ -133,13 +144,13 @@
 
         <h3 id="footer-heading-1">Furniro.</h3>
 
-        <p id="address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+        <p id="footer-address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
 
         <nav id="footer-nav">
             <div class="footer-nav-container" id="footer-link-nav">
-                <p class="fotter-nav-heading">Links</p>
+                <p class="footer-nav-heading">Links</p>
                 <ul class="footer-nav-list">
-                    <li><a class="footer-nav-link" href="home.html">Home</a></li>
+                    <li><a class="footer-nav-link" href="index.html">Home</a></li>
                     <li><a class="footer-nav-link" href="shop.html">Shop</a></li>
                     <li><a class="footer-nav-link" href="about.html">About</a></li>
                     <li><a class="footer-nav-link" href="contact.html">Contact</a></li>
@@ -147,7 +158,7 @@
             </div>
 
             <div class="footer-nav-container" id="footer-help-nav">
-                <p class="fotter-nav-heading">Helps</p>
+                <p class="footer-nav-heading">Helps</p>
                 <ul class="footer-nav-list">
                     <li><a class="footer-nav-link" href="Payment-Options.html">Payment Options</a></li>
                     <li><a class="footer-nav-link" href="Returns.html">Returns</a></li>
@@ -156,16 +167,16 @@
             </div>
 
             <form class="footer-nav-container" action="" method="get">
-                <p class="fotter-nav-heading">Newsletter</p>
+                <p class="footer-nav-heading">Newsletter</p>
                 <input type="text" placeholder="Enter Your Email Address">
-                <button id="subscribe-button">SUBSCRIBE</button>
+                <button id="footer-subscribe">SUBSCRIBE</button>
             </form>
             
         </nav>
 
         <hr>
 
-        <p id="copy-right">2023 furino. All rights reverved</p>
+        <p id="footer-copy-right">2023 furino. All rights reverved</p>
 
     </footer>
 </body>
