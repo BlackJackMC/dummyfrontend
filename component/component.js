@@ -17,7 +17,7 @@ function changePriceFormat(price) {
     return reverse(price.join("."))
 }
 
-function generateProduct(product) {
+function generateProduct(product,section_id) {
     if (product.tag) {
         product.tag = capitalizeFirstLetter(product.tag)
     }
@@ -43,7 +43,7 @@ function generateProduct(product) {
     </div>
 </div>
 `;
-    const sec_3 = document.getElementById("section-3");
+    const sec_3 = document.getElementById(section_id);
     sec_3.insertAdjacentHTML("beforeend",markup)
 }
 
