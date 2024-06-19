@@ -17,14 +17,6 @@ function changePriceFormat(price) {
     return reverse(price.join("."))
 }
 
-async function getProduct() {
-    console.log("Test");
-    const response = await fetch("https://dummyapi-0uzr.onrender.com/products");
-    const content = await response.json();
-    console.log(content);
-    return content;
-}
-
 function generateProduct(product) {
     if (product.tag) {
         product.tag = capitalizeFirstLetter(product.tag)
@@ -52,7 +44,7 @@ function generateProduct(product) {
 </div>
 `;
     const sec_3 = document.getElementById("section-3");
-    sec_3.insertAdjacentHTML("beforeend",markup)  
+    sec_3.insertAdjacentHTML("beforeend",markup)
 }
 
 // product: 
@@ -62,7 +54,20 @@ function generateProduct(product) {
 //     - price (int)
 //     - short_desc (string)
 //     - tag (string)
-//     - unit_price(rp)
+//     - unit_price(string)
+
+
+
+async function getProduct() {
+    if (localStorage.getItem("products") !== null) return JSON.parse(localStorage.getItem("products"));
+    // console.log("Test");
+    const response = await fetch("https://dummyapi-0uzr.onrender.com/products");
+    let content = await response.json();
+    content = content.product_list;
+    // console.log(content);
+    localStorage.setItem("products",JSON.stringify(content));
+    return content;
+}
 
 async function generateAllProduct() {
     const content = await getProduct();
@@ -77,9 +82,9 @@ function genProductTest() {
 }
 
 function main() {
-    genProductTest();
+    // genProductTest();
     // getProduct();
-    // generateAllProduct();
+    generateAllProduct();
 }
 
 main();
