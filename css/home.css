@@ -47,7 +47,7 @@
 #hero-buy-now-button {
   width: min(90%, 13rem);
   height: 4rem;
-  cursor: pointer;
+  
   color: var(--tx-tertiary);
   font-weight: var(--fw-bold);
   background-color: var(--bg-tertiary);
@@ -175,7 +175,7 @@
   font-size: 0.8rem;
   align-items: center;
   color: white;
-  cursor: pointer;
+  
 }
 
 .action-share:hover,
@@ -193,7 +193,7 @@
   margin-left: calc(50% - 77% / 2);
   margin-top: 55%;
   margin-bottom: 5%;
-  cursor: pointer;
+  
 }
 
 #add-to-cart-button:active {
@@ -278,7 +278,7 @@
   color: #B88E2F;
   font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
+  
 }
 
 #production-show-more:active {

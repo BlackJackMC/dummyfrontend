@@ -50,6 +50,10 @@ button {
   outline: none;
 }
 
+button:hover, a:hover {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
 }
@@ -62,7 +66,7 @@ header {
   padding: 1rem 3rem;
   position: fixed;
   top: 0;
-  width: 100svw;
+  width: 100dvw;
   background-color: white;
   z-index: 100;
 }
@@ -137,86 +141,79 @@ header {
   font-weight: var(--fw-bold);
 }
 
-.before-footer
-{
+.before-footer {
   margin-top: 12vh;
   margin-bottom: clamp(15px, 7vh, 50px);
 }
-.after-footer
-{
+
+.after-footer {
   margin-top: clamp(15px, 7vh, 50px);
   margin-bottom: clamp(15px, 7vh, 50px);
   width: 94vw;
 }
 
-footer
-{
-  width: 100%;
+footer .container {
+  width: 90%;
+  margin: 0 auto;
   --footer-dist: clamp(15px, 7vh, 50px);
   display: grid;
   grid-template-columns: 3fr 6fr;
-  margin-inline: 3vw;
 }
 
-@media screen and (max-width: 850px)
-{
-  footer
-  {
+@media screen and (max-width: 850px) {
+  footer {
     grid-template-columns: repeat(auto-fill, minmax(400px, max-content));
   }
 }
 
-#footer-heading-1
-{
+#footer-heading-1 {
   margin: 0;
 }
 
-#footer-address
-{
+#footer-address {
   width: min(100%, 350px);
   margin-bottom: var(--footer-dist);
   color: #9F9F9F;
   margin-top: var(--footer-dist);
 }
 
-#footer-nav
-{
+#footer-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
   column-gap: min(2vw, 20px);
 }
-.footer-nav-heading
-{
+
+.footer-nav-heading {
   color: #9F9F9F;
   font-weight: var(--fw-semibold);
 }
-.footer-nav-list
-{
+
+.footer-nav-list {
   margin: 0;
+  font-weight: var(--fw-medium);
 }
 
-.footer-input, .footer-nav-list *
-{
+.footer-input,
+.footer-nav-list * {
   margin-top: var(--footer-dist);
 }
 
-.footer-input, #footer-subscribe
-{
+.footer-input,
+#footer-subscribe {
   border-style: none;
-  border-bottom: solid;
+  border-bottom: 2px solid black;
 }
-.footer-input
-{
+
+.footer-input {
   padding-right: 1.7vw;
 }
-#footer-subscribe
-{
+
+#footer-subscribe {
   background-color: white;
   font-weight: var(--fw-semibold);
   padding: 0;
 }
 
-#footer-copy-right
-{
+#footer-copy-right {
   margin-inline: 3vw;
 }
